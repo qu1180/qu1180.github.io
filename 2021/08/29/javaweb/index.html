@@ -193,14 +193,14 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 29, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>955</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>932</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
         <p>四大作用域从小到大为：PageContext（jsp页面），ServletRequest（一次请求），HttpSession（一次会话），ServletContext（整个web应用）。那么，Javaweb四大作用域作用分别是什么？</p>
-<h2 id="Javaweb四大作用域作用分别是什么？"><a href="#Javaweb四大作用域作用分别是什么？" class="headerlink" title="Javaweb四大作用域作用分别是什么？"></a><strong>Javaweb四大作用域作用分别是什么？</strong></h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><img    class="lazyload" data-original="https://cdn.jsdelivr.net/gh/qu1180/images@main/img/20210824092106.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20210824091901447</span></p>
+<h2 id="Javaweb四大作用域作用分别是什么？"><a href="#Javaweb四大作用域作用分别是什么？" class="headerlink" title="Javaweb四大作用域作用分别是什么？"></a><strong>Javaweb四大作用域作用分别是什么？</strong></h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><img   class="lazyload" data-original="https://cdn.jsdelivr.net/gh/qu1180/images@main/img/20210824092106.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 <h3 id="一、PageContext域："><a href="#一、PageContext域：" class="headerlink" title="一、PageContext域："></a>一、PageContext域：</h3><p>作用范围是整个JSP页面，是四大作用域中最小的一个；生命周期是当对JSP的请求时开始，当响应结束时销毁。</p>
 <h3 id="二、ServletRequest域："><a href="#二、ServletRequest域：" class="headerlink" title="二、ServletRequest域："></a>二、ServletRequest域：</h3><p>作用范围是整个请求链（请求转发也存在）；生命周期是在service方法调用前由服务器创建，传入service方法。整个请求结束，request生命结束。</p>
 <h3 id="三、HttpSession域："><a href="#三、HttpSession域：" class="headerlink" title="三、HttpSession域："></a>三、HttpSession域：</h3><p>作用范围是一次会话。生命周期是在第一次调用request.getSession()方法时，服务器会检查是否已经有对应的session,如果没有就在内存中创建一个session并返回。当一段时间内session没有被使用（默认为30分钟），则服务器会销毁该session。如果服务器非正常关闭（强行关闭），没有到期的session也会跟着销毁。如果调用session提供的invalidate（），可以立即销毁session。</p>
