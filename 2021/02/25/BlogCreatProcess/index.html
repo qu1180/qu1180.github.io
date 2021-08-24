@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>建立Hexo个人博客 - dw</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  <meta name="keywords" content=", hexo-blog,个人博客搭建,zhaoo">
+  <meta name="description" content="
+使用hexo和github.pages搭建博客，主题...">
+  <meta name="author" content="qu1180">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://cdn.jsdelivr.net/gh/qu1180/images@main/img/支付宝支付.png',
+        wechat: 'https://cdn.jsdelivr.net/gh/qu1180/images@main/img/微信支付.png'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v1.hitokoto.cn/?encode=text&c=d',
+          data_contents: ''
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'image',
+        image: 'https://cdn.jsdelivr.net/gh/qu1180/images@main/img/微信加好友.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">建立Hexo个人博客</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Copyright© 2020 - 2023 | <a target="_blank" href="https://xiaodianwei.com">qu</a>  |<a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">AllRightsReserved</a></p><p>浙ICP备17007822号</p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://cdn.jsdelivr.net/gh/qu1180/images@main/img/160624-14754819846335.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">建立Hexo个人博客</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>February 25, 2021</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>9059</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <blockquote>
+<p>使用hexo和github.pages搭建博客，主题为<a target="_blank" rel="noopener" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p>
+<p>文章部分功能是主题没更新之前写的，作为记录，已有的内容不再修改，具体配置情况根据主题而定。更多内容可以参考zhaoo主题作者博客主页：<a target="_blank" rel="noopener" href="https://www.izhaoo.com/">zhaoo</a></p>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>github创建名为username.github.io的repository</p>
+<p>安装git</p>
+<p>安装Node.js</p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>新建文件夹blog，存放博客的所有内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 安装hexo<br>npm install hexo-cli -g<br># 确认是否安装成功<br>hexo -v<br># init<br>hexo init<br>npm install<br></code></pre></td></tr></table></figure>
+
+<p>生成的几个文件：</p>
+<ul>
+<li>node_modules：依赖包</li>
+<li>public：存放生成的页面</li>
+<li>scaffolds：生成文章的一些模版</li>
+<li>source：用来存放文章</li>
+<li>themes：主题</li>
+<li>_config.yml: 配置文件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hexo server<br></code></pre></td></tr></table></figure>
+
+<p>然后在浏览器输入localhost:4000即可看到生成的博客。</p>
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>hexo默认主题是landscape，可以自由更换主题：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#下载主题到themes/zhaoo路径<br>git clone git@github.com:izhaoo/hexo-theme-zhaoo.git themes/zhaoo<br></code></pre></td></tr></table></figure>
+
+<p>根据需求创建tags、about、categories页面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hexo new page tags<br>hexo new page about<br>hexo new page categories<br></code></pre></td></tr></table></figure>
+
+<p>以上代码会在<code>source</code>的对应文件夹下生成index.md文件，可根据需求配置页面:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 以tags的index为例，将layout设置为tags布局，不同与一般的布局。<br>layout: tags<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>layout(布局)有三种：post(文章)、draft(草稿)、page(页面)，默认是post</p>
+</blockquote>
+<p>然后根据主题配置说明，配置主题的配置文件<code>themes/zhaoo/_config.yml</code></p>
+<h1 id="关联git库"><a href="#关联git库" class="headerlink" title="关联git库"></a>关联git库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 安装要用的插件<br>npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+
+<p>修改<code>blog/_config.yml</code>配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">deploy：<br>  type: git<br>  repo: git@github.com:username/username.github.io.git<br>  branch: master<br></code></pre></td></tr></table></figure>
+
+<p>上述代码表示部署到指定的库中，并且默认部署到分支master。</p>
+<p>部署的机制是将本地生成的<code>.deploy_git</code>文件夹里的文件，上传到远程库，并不包括配置文件和主题文件。</p>
+<blockquote>
+<p>为了方便多终端工作，建议每次写完文章，除了deploy操作以外，将源代码也push到远程仓库保存。新建一个分支，将源文件push到这个分支里面，这样在另一台机器上只需要clone远程库，安装必要的文件就可以了。</p>
+</blockquote>
+<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 创建新的文件，默认保存在source/_post路径下<br>hexo new &#x27;new blog&#x27;<br># run server<br>hexo server<br># 清除缓存<br>hexo clean<br># 生成静态网页<br>hexo generate/hexo g<br># 将网页部署到远程站点<br>hexo deploy/hexo d<br></code></pre></td></tr></table></figure>
+
+<p>在<code>scaffolds</code>文件夹中，有三种默认布局新建时的模版，可以自定义新建文件时的格式。</p>
+<p>tags和categories属性的值可以用列表，表示多个标签/类别。</p>
+<h1 id="数学公式渲染"><a href="#数学公式渲染" class="headerlink" title="数学公式渲染"></a>数学公式渲染</h1><blockquote>
+<p>主题更新添加了公式渲染配置的说明，方法简单快捷，可以<a target="_blank" rel="noopener" href="https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc/#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">参考</a>。本节内容作为踩坑记录。</p>
+</blockquote>
+<blockquote>
+<p>hexo默认的Markdown渲染器是hexo-renderer-marked，会先按照Markdown语法解析，然后才是LaTex，所以会有冲突。试了网上各种解决方法，终于遇到一个有效的方法：<a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/2020/03/07/5e633a3b46a81/">hexo无法显示公式的问题-DGZ’s Blog</a></p>
+</blockquote>
+<h2 id="重装插件"><a href="#重装插件" class="headerlink" title="重装插件"></a>重装插件</h2><p>首先，只保留一个公式渲染器，这里保留kramed渲染器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 卸载默认的渲染器，其他的公式渲染器也卸载，只保留kramed<br>npm uninstall hexo-renderer-marked --save<br>npm install hexo-renderer-kramed --save<br></code></pre></td></tr></table></figure>
+
+<h2 id="修改js文件"><a href="#修改js文件" class="headerlink" title="修改js文件"></a>修改js文件</h2><p>打开<code>bolg/node_modules/hexo-renderer-kramed/lib/renderer.js</code>，将：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//change inline math rule<br>function formatText(text) &#123;<br>    // Fit kramed&#x27;s rule: $$ + 1 + $$<br>    return text.replace(/`$(.*?)$`/g, &#x27;$$$$$1$$$$&#x27;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>修改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// Change inline math rule<br>function formatText(text) &#123;<br>    return text;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="安装mathjax插件"><a href="#安装mathjax插件" class="headerlink" title="安装mathjax插件"></a>安装mathjax插件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 如果有hexo-math，则卸载掉<br>npm uninstall hexo-math --save<br>npm install hexo-renderer-mathjax --save<br></code></pre></td></tr></table></figure>
+
+<h2 id="修改html文件"><a href="#修改html文件" class="headerlink" title="修改html文件"></a>修改html文件</h2><p>打开<code>blog/node_modules/hexo-renderer-mathjax/mathjax.html，将：</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;script src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p>修改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="激活插件"><a href="#激活插件" class="headerlink" title="激活插件"></a>激活插件</h2><p>在使用公式的md文件添加属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mathjax: true<br></code></pre></td></tr></table></figure>
+
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>如果是第一次修改，修改完以后需要重新启动服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hexo clean<br>hexo g<br>hexo s<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>众所周知，github是万能的，使用<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/">PigGo</a>和Github搭建个人图床，参考<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E5%90%AC%E8%AF%B4%E4%BD%A0%E4%B9%9F%E6%83%B3%E7%94%A8picgo">PigGo官方文档</a></p>
+<h2 id="新建github项目"><a href="#新建github项目" class="headerlink" title="新建github项目"></a>新建github项目</h2><p>新建github项目用来存放图片，并生成token：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">github头像-&gt;Settings-&gt;Developer settings-&gt;Generate new token<br>将repo选项打勾<br></code></pre></td></tr></table></figure>
+
+<h2 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h2><p><img    class="lazyload" data-original="https://cdn.jsdelivr.net/gh/kangshitao/BlogPicture@main/img/blogcreatprocess_1.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1</span></p>
+<p>然后点击确定，并设置为默认图床。</p>
+<p>自定义域名可以按照图中的设置，也可以使用别的自定义域名。第二种域名方式就是使用<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN</a>加速的方法，CDN(Content Delivery Network)是指内容分发网络，也称为内容传送网络。</p>
+<p><a target="_blank" rel="noopener" href="https://www.jsdelivr.com/?docs=gh">jsDelivr</a>是一种免费的CDN加速产品，可以加速Github和NPM的资源，其中使用jsDelivr的方法访问Github资源只需要将链接改为以下格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://cdn.jsdelivr.net/gh/username/repository@version/file   <br># 其中的version指的是仓库版本，如果没有release版本，也可以使用分支名称<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>jsDelivr的更多用法可以参考官方文档</p>
+</blockquote>
+<p>使用jsDelivr加速的自定义域名填写内容如下：</p>
+<p><img    class="lazyload" data-original="https://cdn.jsdelivr.net/gh/kangshitao/BlogPicture@main/img/blogcreatprocess_2.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">2</span></p>
+<h2 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h2><p>将图片拖入上传区，上传成功后会自动在剪切板生成图片链接。</p>
+<h2 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h2><p>其他参数设置可根据个人喜好进行设置：</p>
+<p><img    class="lazyload" data-original="https://cdn.jsdelivr.net/gh/kangshitao/BlogPicture@main/img/blogcreatprocess_3.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">3</span></p>
+<h2 id="图片上传失败问题"><a href="#图片上传失败问题" class="headerlink" title="图片上传失败问题"></a>图片上传失败问题</h2><p>由于某些原因，github当作图库不是很稳定，时好时坏也是正常现象。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/TalesOV/article/details/104450037?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.channel_param">PicGo踩坑记</a></p>
+<ul>
+<li>首先检查设置的仓库名是否正确，仓库名不可包含空格，且不要出现奇怪的符号</li>
+<li>上传的图片名字不要有奇怪符号</li>
+<li>间歇性上传失败的话，可以将server的开关状态切换一下</li>
+</ul>
+<p>另外，有条件的可以使用全局代理:airplane:</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>主题的其他设置可以参考<a target="_blank" rel="noopener" href="https://www.izhaoo.com/2020/05/05/hexo-theme-zhaoo-doc/">zhaoo主题文档</a>，这里只记录一部分</p>
+<h2 id="访问量统计"><a href="#访问量统计" class="headerlink" title="访问量统计"></a>访问量统计</h2><p>主题默认使用的是<a target="_blank" rel="noopener" href="https://leancloud.cn/">leancloud</a>，这里的统计是每篇文章的访问量，zhaoo主题支持leancloud，只需要按要求填写即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">进入leancloud，创建应用(开发版)<br>创建Class，ACL权限选择无限制<br>打开设置-应用keys<br>将AppID、AppKey、Rest API服务器地址复制到themes/_config.yml<br></code></pre></td></tr></table></figure>
+
+<p>如果想要设置本地访问不统计次数，则可以在<code>\themes\zhaoo\layout\_partial\common\visitors.ejs</code>中，修改以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$(function () &#123;<br>	  const Counter = AV.Object.extend(&quot;Counter&quot;);<br>	  showCount(Counter);<br>      const localhost = /http\:\/\/localhost|http\:\/\/127.0.0.1|http\:\/\/0.0.0.0/;<br>      if (localhost.test(document.URL)) &#123;<br>	    return;<br>	  &#125;<br>	  addCount(Counter);<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>如果想对网站访问量统计，可以使用<a target="_blank" rel="noopener" href="http://busuanzi.ibruce.info/">卜蒜子</a>，在<code>themes\zhaoo\layout\_partial\footer.ejs</code>中合适的位置加入以下代码，其中的字体显示内容和风格可以自由设置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&lt;/script&gt;<br>&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;<br>  总浏览量：&lt;span id=&quot;busuanzi_value_site_pv&quot; style=&quot;font-size:12px;&quot;&gt;&lt;/span&gt; 次<br>&lt;/span&gt;<br>&lt;span id=&quot;busuanzi_container_site_uv&quot; &gt;<br>  总访客数：&lt;span id=&quot;busuanzi_value_site_uv&quot; style=&quot;font-size:12px;&quot;&gt;&lt;/span&gt;人<br>&lt;/span&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h2><h3 id="开启Valine"><a href="#开启Valine" class="headerlink" title="开启Valine"></a>开启Valine</h3><p>使用<a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a>，前提是主题支持：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">leancloud,创建应用(开发版),可以和访问量统计使用一个应用<br>创建Class，配置默认<br>打开设置-应用keys<br>将AppID、AppKey复制到themes/_config.yml<br></code></pre></td></tr></table></figure>
+
+<h3 id="设置邮箱提醒"><a href="#设置邮箱提醒" class="headerlink" title="设置邮箱提醒"></a>设置邮箱提醒</h3><p>如果想要在别人评论后，能够收到提醒，就需要设置邮箱提醒了。这里使用<a target="_blank" rel="noopener" href="https://github.com/zhaojun1998/Valine-Admin">Valine-Admin</a>插件，参考官方教程设置：</p>
+<ol>
+<li><p>进入<a target="_blank" rel="noopener" href="https://console.leancloud.cn/apps">Leancloud</a>对应的valine应用中，</p>
+</li>
+<li><p>点击云引擎–设置，添加环境变量，添加自定义环境变量，保存。</p>
+<blockquote>
+<p>如果使用QQ邮箱，密码需要使用QQ邮箱的授权码。</p>
+</blockquote>
+</li>
+<li><p>设置好环境变量以后，选择Web–部署–Git部署，填写代码库<code>https://github.com/zhaojun1998/Valine-Admin</code>，分支使用master，部署。</p>
+</li>
+</ol>
+<p>此外，由于LeanCloud免费版有休眠策略，需要使用自定义计时器让容器一直保持运行状态。</p>
+<p>具体使用方法：</p>
+<ul>
+<li>创建两个定时任务，第一个定时器选<code>self_wake</code>函数,<code>Cron</code>表达式填<code>0 */20 7-23 * * ?</code>，表示每天的7-23点每20分钟访问一次。</li>
+<li>第二个定时器选<code>resend_mails</code>函数，<code>Cron</code>表达式填<code>0 0 8 * * ?</code>，表示每天早8点检查过去24小时内漏发的通知邮件并补发。</li>
+</ul>
+<p>更新设置以后，重新部署一下即可，至此，可以收到邮件的评论提醒，此外还可以设置邮件的回执格式等。</p>
+<h3 id="设置微信提醒"><a href="#设置微信提醒" class="headerlink" title="设置微信提醒"></a>设置微信提醒</h3><p>如果想使用微信提醒，前提是配置好邮箱提醒。</p>
+<p>使用<a target="_blank" rel="noopener" href="https://sct.ftqq.com/">Server酱</a>设置微信提醒，首先需要根据<a target="_blank" rel="noopener" href="http://sc.ftqq.com/9.version">Server酱的使用教程</a>获取到<code>SCKEY</code>，在LeanCloud中添加自定义环境变量，<code>name</code>是<code>SCKEY</code>，<code>value</code>是<code>SCKEY</code>的值，保存，重新部署。这样配置完后，在Server酱官网进行测试，应该能够收到微信提醒。</p>
+<p>设置别人评论收到微信提醒，需要在主题的JS文件中添加代码（参考<a target="_blank" rel="noopener" href="https://www.zyskys.com/posts/bd75">链接</a>），往 <code>https://sctapi.ftqq.com/SENDKEY.send</code> 发 HTTP 请求，就可以收到消息啦。具体设置，根据不同主题而定，对于<code>zhaoo</code>主题，在<code>zhaoo\layout\_partial\comments</code>下的<code>valine.ejs</code>文件中，添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 添加代码以后的文件</span><br>&lt;% <span class="hljs-keyword">if</span> (theme.valine.appId &amp;&amp; theme.valine.appKey) &#123; %&gt;<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;valine&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//unpkg.com/valine/dist/Valine.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="javascript"><span class="xml">  <span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">    <span class="hljs-keyword">var</span> loadValine = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">      <span class="hljs-keyword">new</span> Valine(&#123;</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#valine&#x27;</span>,</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-attr">app_id</span>: <span class="hljs-string">&quot;&lt;%= theme.valine.appId %&gt;&quot;</span>,</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-attr">app_key</span>: <span class="hljs-string">&quot;&lt;%= theme.valine.appKey %&gt;&quot;</span>,</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-attr">placeholder</span>: <span class="hljs-string">&quot;&lt;%= theme.valine.placeholder %&gt;&quot;</span>,</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-attr">avatar</span>: <span class="hljs-string">&quot;&lt;%= theme.valine.avatar %&gt;&quot;</span>,</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-attr">pageSize</span>: <span class="hljs-string">&quot;&lt;%= theme.valine.pageSize %&gt;&quot;</span>,</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-attr">lang</span>: <span class="hljs-string">&quot;&lt;%= theme.valine.lang %&gt;&quot;</span>,</span></span><br><span class="javascript"><span class="xml">      &#125;);</span></span><br><span class="javascript"><span class="xml">    &#125;</span></span><br><span class="javascript"><span class="xml">    <span class="hljs-keyword">if</span> ( &lt;%- theme.comments.button %&gt; ) &#123;</span></span><br><span class="javascript"><span class="xml">      $(<span class="hljs-string">&quot;#comments-btn&quot;</span>).on(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">        $(<span class="hljs-built_in">this</span>).hide();</span></span><br><span class="javascript"><span class="xml">        loadValine();</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-comment">//从这里开始添加代码</span></span></span><br><span class="javascript"><span class="xml">		<span class="hljs-keyword">var</span> title1=<span class="hljs-string">&quot;text=Live and Learn有新评论啦~ --by Valine&quot;</span>  <span class="hljs-comment">//自定义标题</span></span></span><br><span class="javascript"><span class="xml">		<span class="hljs-keyword">var</span> SCKEY_Server=<span class="hljs-string">&quot;&quot;</span>  <span class="hljs-comment">//填写SCKEY的值</span></span></span><br><span class="javascript"><span class="xml">		<span class="hljs-keyword">var</span> ValineButton=<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;vsubmit vbtn&quot;</span>)[<span class="hljs-number">0</span>];</span></span><br><span class="javascript"><span class="xml">		<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send_valine_Server</span>(<span class="hljs-params"></span>)</span>&#123;</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> text=<span class="hljs-string">&quot;desp=&quot;</span>;</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> pageurl=<span class="hljs-built_in">document</span>.URL;</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> ptime=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> vnick=<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;vnick vinput&quot;</span>)[<span class="hljs-number">0</span>].value;</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> veditor=<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;veditor vinput&quot;</span>)[<span class="hljs-number">0</span>].value;</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> data=text+<span class="hljs-string">&quot;|昵称&quot;</span>+<span class="hljs-string">&quot;|评论内容&quot;</span>+<span class="hljs-string">&quot;|跳转链接&quot;</span>+<span class="hljs-string">&quot;|评论时间&quot;</span>+<span class="hljs-string">&quot;\n&quot;</span>+<span class="hljs-string">&quot;|----|----|----|----|&quot;</span>+<span class="hljs-string">&quot;\n&quot;</span>+<span class="hljs-string">&quot;|&quot;</span>+vnick+<span class="hljs-string">&quot;|&quot;</span>+veditor+<span class="hljs-string">&quot;|&quot;</span>+pageurl+<span class="hljs-string">&quot;|&quot;</span> +ptime.toLocaleString()+<span class="hljs-string">&quot;|&quot;</span>;</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> httpRequest = <span class="hljs-keyword">new</span> XMLHttpRequest();<span class="hljs-comment">//第一步：创建需要的对象</span></span></span><br><span class="javascript"><span class="xml">			httpRequest.open(<span class="hljs-string">&#x27;POST&#x27;</span>, <span class="hljs-string">&#x27;https://sctapi.ftqq.com/&#x27;</span>+SCKEY_Server+<span class="hljs-string">&#x27;.send&#x27;</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">//第二步：打开连接</span></span></span><br><span class="javascript"><span class="xml">			httpRequest.setRequestHeader(<span class="hljs-string">&quot;Content-type&quot;</span>,<span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>);<span class="hljs-comment">//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）</span></span></span><br><span class="javascript"><span class="xml">			httpRequest.send(title1+<span class="hljs-string">&quot;&amp;&quot;</span>+data);<span class="hljs-comment">//发送请求 将请头体体写在send中</span></span></span><br><span class="javascript"><span class="xml">		&#125;;</span></span><br><span class="javascript"><span class="xml">		ValineButton.onclick=send_valine_Server;</span></span><br><span class="javascript"><span class="xml">        <span class="hljs-comment">// 添加代码结束</span></span></span><br><span class="javascript"><span class="xml">      &#125;);</span></span><br><span class="javascript"><span class="xml">    &#125; <span class="hljs-keyword">else</span> &#123;</span></span><br><span class="javascript"><span class="xml">      loadValine();</span></span><br><span class="javascript"><span class="xml">    &#125;</span></span><br><span class="javascript"><span class="xml">  &#125;;</span></span><br><span class="javascript"><span class="xml"> </span></span><br><span class="javascript"><span class="xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br>&lt;% &#125; %&gt;<br><br></code></pre></td></tr></table></figure>
+
+<p>至此，收到评论以后就能够收到微信提醒。</p>
+<h2 id="侧边目录"><a href="#侧边目录" class="headerlink" title="侧边目录"></a>侧边目录</h2><p>zhaoo没有支持侧边目录，需要自己添加代码，使用hexo官方的toc函数。(2020.11.16主题更新，已经支持)</p>
+<p>在<code>themes\zhaoo\layout\_partial\post\article.ejs</code>中，最前面加以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;aside class=&quot;post-widget&quot;&gt;<br>  &lt;nav id=&quot;toc&quot; class=&quot;toc-article fixed&quot;&gt;<br>	&lt;strong class=&quot;toc-title&quot;&gt;文章目录&lt;/strong&gt;<br>	  &lt;%- toc(page.content, &#123;<br>	    class: &#x27;post-toc&#x27;,<br>		list_number: false,<br>        max_depth: &#x27;6&#x27;,<br>	    min_depth: &#x27;1&#x27;&#125;) %&gt;<br>	&lt;/nav&gt;<br>&lt;/aside&gt;<br></code></pre></td></tr></table></figure>
+
+<p>然后在<code>themes\zhaoo\source\css\_partial\post.styl</code>中，最前面添加以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">.post-widget<br>  float right<br>  width 15%<br>  padding-left 10px<br>  min-hidden 1px<br>.toc-article.fixed<br>  top 76px<br>  bottom 140px<br>  overflow-y auto<br>.toc-article<br>  position fixed<br>  overflow-x hidden<br>.toc-title<br>  padding-left 20px<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><blockquote>
+<p>搜索引擎优化（Search Engine Optimization,SEO），是一种通过了解搜索引擎的运作规则来调整网站，以及提高目的网站在有关搜索引擎内排名的方式。</p>
+</blockquote>
+<p>Github.pages屏蔽了百度的爬虫请求，配置较麻烦，这里仅以Google为例，使用<a target="_blank" rel="noopener" href="https://search.google.com/search-console/about">Google Search Console</a>，以下过程参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35400128">hexo博客搭建(五) SEO优化</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1、首先去google search console验证，有多种方式可选。<br>2、添加站点地图 sitemap<br>npm install hexo-generator-sitemap --save  # 安装站点地图自动生成的插件<br>在_config.yml文件中添加以下代码：<br>sitemap:<br>  path: sitemap.xml<br>3、部署之后可以去google search console测试。<br></code></pre></td></tr></table></figure>
+
+
+
+<p> continue……</p>
+<hr>
+<h1 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo官方文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程</a></p>
+</blockquote>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>qu1180</li>
+    <li><strong>本文链接：</strong><a href="https://xiaodianwei.com/2021/02/25/BlogCreatProcess/index.html" title="https:&#x2F;&#x2F;xiaodianwei.com&#x2F;2021&#x2F;02&#x2F;25&#x2F;BlogCreatProcess&#x2F;index.html">https:&#x2F;&#x2F;xiaodianwei.com&#x2F;2021&#x2F;02&#x2F;25&#x2F;BlogCreatProcess&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://cdn.jsdelivr.net/gh/qu1180/images@main/img/支付宝支付.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2021/03/19/java-note-0101/"><i class="iconfont iconleft"></i>Java学习笔记1-Java语言概述</a>
+    <a href="/2021/01/27/rank-algorithm/">10种常用排序算法总结<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E8%81%94git%E5%BA%93"><span class="toc-text">关联git库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-text">新建文章</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93"><span class="toc-text">数学公式渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">重装插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9js%E6%96%87%E4%BB%B6"><span class="toc-text">修改js文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85mathjax%E6%8F%92%E4%BB%B6"><span class="toc-text">安装mathjax插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9html%E6%96%87%E4%BB%B6"><span class="toc-text">修改html文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E6%8F%92%E4%BB%B6"><span class="toc-text">激活插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-text">部署</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%BA%8A"><span class="toc-text">图床</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAgithub%E9%A1%B9%E7%9B%AE"><span class="toc-text">新建github项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEPicGo"><span class="toc-text">配置PicGo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87"><span class="toc-text">上传图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE"><span class="toc-text">其他设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98"><span class="toc-text">图片上传失败问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1"><span class="toc-text">访问量统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-text">评论功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AFValine"><span class="toc-text">开启Valine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%82%AE%E7%AE%B1%E6%8F%90%E9%86%92"><span class="toc-text">设置邮箱提醒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92"><span class="toc-text">设置微信提醒</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%A7%E8%BE%B9%E7%9B%AE%E5%BD%95"><span class="toc-text">侧边目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SEO%E4%BC%98%E5%8C%96"><span class="toc-text">SEO优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B"><span class="toc-text">参考教程</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=1689691898 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/dotjgkalts/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/qu1180 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="https://mail.google.com/mail/u/0/#inbox "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Copyright© 2020 - 2023 | <a target="_blank" href="https://xiaodianwei.com">qu</a>  |<a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">AllRightsReserved</a></p><p>浙ICP备17007822号</p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
